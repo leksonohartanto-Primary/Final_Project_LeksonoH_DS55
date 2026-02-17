@@ -342,18 +342,18 @@ if predict_clicked:
         confidence_low = prediction_proba[0][0]
         confidence_high = prediction_proba[0][1]
 
-        col_metric1, col_metric2 = st.columns(2)
-        with col_metric1:
-            st.metric(
-                label="≤50K Probability",
-                value=f"{confidence_low:.1%}",
-                delta=None
+    col_metric1, col_metric2 = st.columns(2)
+    with col_metric1:
+        st.metric(
+            label="≤50K Probability",
+            value=f"{confidence_low:.1%}",
+            delta=None
             )
-        with col_metric2:
-            st.metric(
-                label=" >50K Probability",
-                value=f"{confidence_high:.1%}",
-                delta=None
+    with col_metric2:
+        st.metric(
+            label=" >50K Probability",
+            value=f"{confidence_high:.1%}",
+            delta=None
             )
 
     # Confidence gauge chart
@@ -501,4 +501,5 @@ st.markdown("""
     <p>Data Source: <a href='https://www.kaggle.com/datasets/uciml/adult-census-income'>UCI Machine Learning Repository - Adult Census Income</a></p>
     <p>Model: XGBoost with Hyperparameter Tuning (RandomizedSearchCV)</p>
 </div>
+
 """, unsafe_allow_html=True)
